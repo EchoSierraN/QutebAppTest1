@@ -29,6 +29,8 @@
     <string name="signup_confirm_password">Confirm Password</string>
     <string name="signup_i_agree_to_terms">I AGREE TO TERMS AND CONDITIONS</string>
     <string name="signup_signup">SIGN UP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
