@@ -13,6 +13,8 @@
         android:layout_height="match_parent"
         android:layout_below="@id/dashboard_appBarLayout"/>
 
+
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/dashboard_appBarLayout"
         android:layout_width="match_parent"
@@ -26,6 +28,7 @@
             app:tabTextAppearance="@style/CustomTabStyle"
             app:tabBackground="@color/white"
             app:tabGravity="fill"
+            app:tabIconTint="@color/colorPrimary"
             app:tabInlineLabel="true"
             app:tabMode="fixed"
             app:tabTextColor="@color/colorPrimary"/>

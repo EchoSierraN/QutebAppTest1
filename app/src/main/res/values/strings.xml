@@ -34,11 +34,31 @@
 
     <!--    SPENDING-->
     <string name="spending_dashboard">DASHBOARD</string>
+    <string name="spending_cash_flow_type">Spending</string>
     <string name="spending_balance">Balance</string>
     <string name="spending_transactions">Transactions</string>
+
+    <!--    INCOME-->
+    <string name="income_dashboard">DASHBOARD</string>
+    <string name="income_cash_flow_type">Income</string>
+    <string name="income_balance">Balance</string>
+    <string name="income_transactions">Transactions</string>
 
     <!--    MISCELLANEOUS-->
     <string name="birr_short">br</string>
     <string name="birr_long">birr</string>
+
+    <!--    CATEGORIES-->
+    <string name="categories_categories">CATEGORIES</string>
+
+    <string name="categories_spending">Spendings</string>
+    <string name="categories_spending_entertainment">Entertainment</string>
+    <string name="categories_spending_family_and_personal">Family and Personal</string>
+    <string name="categories_spending_food">Food</string>
+
+    <string name="categories_income">Incomes</string>
+    <string name="categories_spending_day_job">Day Job</string>
+    <string name="categories_spending_digital_asset_sales">Digital Asset Sales</string>
+    <string name="categories_spending_content_creation">Content Creation</string>
 
 </resources>

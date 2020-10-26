@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.board.adapters.ViewPagerAdapter
+import com.gebeya.qutebapptest1.board.fragments.DashboardIncomeFragment
 import com.gebeya.qutebapptest1.board.fragments.FavoritesFragment
 import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
 import com.gebeya.qutebapptest1.board.fragments.SettingsFragment
@@ -20,14 +21,15 @@ class NoticeBoardActivity : AppCompatActivity() {
     private fun setUpTabs() {
         val adapter= ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(DashboardSpendingFragment(), "")
-        adapter.addFragment(FavoritesFragment(), "")
-        adapter.addFragment(SettingsFragment(), "")
+        adapter.addFragment(DashboardIncomeFragment(), "")
+        //adapter.addFragment(FavoritesFragment(), "")
+        //adapter.addFragment(SettingsFragment(), "")
 
         dashboard_viewPager.adapter= adapter
         dashboard_tabs.setupWithViewPager(dashboard_viewPager)
 
-        dashboard_tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_home_24)
-        dashboard_tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_favorite_24)
-        dashboard_tabs.getTabAt(2)!!.setIcon(R.drawable.ic_baseline_settings_24)
+        dashboard_tabs.getTabAt(0)!!.setIcon(R.drawable.ic_bar_chart)
+        dashboard_tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_attach_money_24)
+        //dashboard_tabs.getTabAt(2)!!.setIcon(R.drawable.ic_baseline_favorite_24)
     }
 }

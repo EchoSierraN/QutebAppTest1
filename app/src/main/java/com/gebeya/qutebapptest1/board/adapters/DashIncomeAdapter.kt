@@ -10,25 +10,22 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
 import com.gebeya.qutebapptest1.data.FinancialData
-import com.gebeya.qutebapptest1.model.SpendingModel
+import com.gebeya.qutebapptest1.model.IncomeModel
 import com.gebeya.qutebapptest1.model.incomeCategories
-import com.gebeya.qutebapptest1.model.spendingCategories
 import kotlinx.android.synthetic.main.fragment_dashboard_spending.*
 import kotlinx.android.synthetic.main.layout_transaction_item.view.*
 
-class DashSpendingAdapter(private var arrayList: ArrayList<SpendingModel>, context: Context): RecyclerView.Adapter<DashSpendingAdapter.ViewHolder>(){
+class DashIncomeAdapter(private var arrayList: ArrayList<IncomeModel>, context: Context): RecyclerView.Adapter<DashIncomeAdapter.ViewHolder>(){
     inner class ViewHolder(listItemView: View): RecyclerView.ViewHolder(listItemView){
-        fun bindItems(model: SpendingModel){
-
-            when(model.spendingCategory){
-                spendingCategories.FAMILY_AND_PERSONAL-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_account_circle_24)
-                spendingCategories.FOOD-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_fastfood_24)
-                spendingCategories.ENTERTAINMENT-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_games_24)
+        fun bindItems(model: IncomeModel){
+            when(model.incomeCategory){
+                incomeCategories.DAY_JOB-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_work_24)
+                incomeCategories.DIGITAL_ASSET_SALES-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_computer_24)
+                incomeCategories.CONTENT_CREATION-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_video_library_24)
             }
-
-            itemView.tv_item_amount.text= model.spendingAmount.toString()
-            itemView.tv_item_source.text= model.spendingSource
-            itemView.tv_item_date.text= model.spendingDate.toString()
+            itemView.tv_item_source.text= model.incomeSource
+            itemView.tv_item_amount.text= model.incomeAmount.toString()
+            itemView.tv_item_date.text= model.incomeDate.toString()
         }
     }
 
@@ -43,5 +40,10 @@ class DashSpendingAdapter(private var arrayList: ArrayList<SpendingModel>, conte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(arrayList[position])
+
+
+        holder.itemView.setOnClickListener {
+
+        }
     }
 }
