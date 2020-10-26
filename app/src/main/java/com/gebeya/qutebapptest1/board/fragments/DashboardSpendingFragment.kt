@@ -1,0 +1,39 @@
+package com.gebeya.qutebapptest1.board.fragments
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.ViewTreeObserver.OnGlobalLayoutListener
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.gebeya.qutebapptest1.R
+import com.gebeya.qutebapptest1.board.adapters.DashSpendingAdapter
+import com.gebeya.qutebapptest1.data.FinancialData
+import kotlinx.android.synthetic.main.fragment_dashboard_spending.*
+
+
+class DashboardSpendingFragment : Fragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_dashboard_spending, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        val dashSpendingAdapter= DashSpendingAdapter(FinancialData.spendingData, this.context!!)
+        rv_spending_transactions.layoutManager= LinearLayoutManager(this.context)
+        rv_spending_transactions.adapter= dashSpendingAdapter
+    }
+
+}

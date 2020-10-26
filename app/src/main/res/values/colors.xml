@@ -15,4 +15,10 @@
     <!--    BLACK-->
     <color name="black">#000</color>
 
+    <!--    BLUE-->
+    <color name="blue">#506AFF</color>
+
+    <color name="gray_light">#E6E6FA</color>
+    <color name="gray_dashboard">#F5F6FF</color>
+    <color name="blue_dashboard_expense">#071441</color>
 </resources>

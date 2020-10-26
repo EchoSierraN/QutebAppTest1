@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.board.adapters.ViewPagerAdapter
 import com.gebeya.qutebapptest1.board.fragments.FavoritesFragment
-import com.gebeya.qutebapptest1.board.fragments.DashboardFragment
+import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
 import com.gebeya.qutebapptest1.board.fragments.SettingsFragment
 import kotlinx.android.synthetic.main.activity_notice_board.*
 
@@ -19,7 +19,7 @@ class NoticeBoardActivity : AppCompatActivity() {
 
     private fun setUpTabs() {
         val adapter= ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(DashboardFragment(), "")
+        adapter.addFragment(DashboardSpendingFragment(), "")
         adapter.addFragment(FavoritesFragment(), "")
         adapter.addFragment(SettingsFragment(), "")
 

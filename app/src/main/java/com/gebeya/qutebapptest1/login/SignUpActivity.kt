@@ -47,7 +47,9 @@ class SignUpActivity : AppCompatActivity() {
 
         btn_signup_signup.setOnClickListener {
             if (cb_signup_i_agree_to_terms.isChecked) {
-                enteredDataCheck()
+                //enteredDataCheck()
+                startActivity(Intent(this@SignUpActivity, NoticeBoardActivity::class.java))
+                finish()
             }
         }
 

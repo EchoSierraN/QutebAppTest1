@@ -32,5 +32,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!--    SPENDING-->
+    <string name="spending_dashboard">DASHBOARD</string>
+    <string name="spending_balance">Balance</string>
+    <string name="spending_transactions">Transactions</string>
+
+    <!--    MISCELLANEOUS-->
+    <string name="birr_short">br</string>
+    <string name="birr_long">birr</string>
 
 </resources>
