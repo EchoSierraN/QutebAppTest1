@@ -24,6 +24,10 @@ interface ApiService {
 //    @GET(Constants.POSTS_URL)
 //    fun fetchPosts(): Call<PostsResponse>
 
+    //region REST FUNCTIONS: DashboardSpendingFragment
+
+    
+    //endregion
 
     //endregion
 
