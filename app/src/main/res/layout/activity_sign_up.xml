@@ -6,10 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".login.SignUpActivity">
 
+    <ImageView
+        android:layout_width="695dp"
+        android:layout_height="695dp"
+        android:background="@drawable/ic_background_activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.327"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444" />
+
+
     <EditText
         android:id="@+id/et_signup_your_first_name"
-        android:layout_width="328dp"
-        android:layout_height="63dp"
+        android:layout_width="356dp"
+        android:layout_height="62dp"
         android:layout_marginTop="36dp"
         android:background="@drawable/signup_data_entry_background"
         android:ems="10"
@@ -22,8 +34,8 @@
 
     <EditText
         android:id="@+id/et_signup_phone_email"
-        android:layout_width="328dp"
-        android:layout_height="63dp"
+        android:layout_width="355dp"
+        android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/signup_data_entry_background"
         android:ems="10"
@@ -36,13 +48,13 @@
 
     <EditText
         android:id="@+id/et_signup_password"
-        android:layout_width="328dp"
-        android:layout_height="63dp"
+        android:layout_width="350dp"
+        android:layout_height="61dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/signup_data_entry_background"
         android:ems="10"
         android:hint="@string/signup_password"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,13 +62,13 @@
 
     <EditText
         android:id="@+id/et_signup_confirm_password"
-        android:layout_width="328dp"
-        android:layout_height="63dp"
+        android:layout_width="348dp"
+        android:layout_height="60dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/signup_data_entry_background"
         android:ems="10"
         android:hint="@string/signup_confirm_password"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,8 +76,8 @@
 
     <TextView
         android:id="@+id/tv_signup_create_account"
-        android:layout_width="364dp"
-        android:layout_height="61dp"
+        android:layout_width="370dp"
+        android:layout_height="62dp"
         android:layout_marginTop="84dp"
         android:text="@string/signup_create_an_account"
         android:textColor="@color/black"
@@ -80,16 +92,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="41dp" />
+        app:layout_constraintGuide_begin="23dp" />
 
     <CheckBox
         android:id="@+id/cb_signup_i_agree_to_terms"
         android:layout_width="285dp"
         android:layout_height="25dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="36dp"
         android:text="@string/signup_i_agree_to_terms"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_signup_confirm_password" />
 

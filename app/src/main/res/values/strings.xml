@@ -19,6 +19,7 @@
     <string name="login_password">PASSWORD</string>
     <string name="login_remember_me">REMEMBER ME</string>
     <string name="login_dont_have_an_account">DON\'T HAVE ACCOUNT?</string>
+    <string name="login_sign_in">SIGN IN</string>
     <string name="login_sign_up">SIGN UP</string>
 
     <!--    SIGNUP-->
@@ -60,5 +61,31 @@
     <string name="categories_spending_day_job">Day Job</string>
     <string name="categories_spending_digital_asset_sales">Digital Asset Sales</string>
     <string name="categories_spending_content_creation">Content Creation</string>
+
+    <!--    FEEDBACK DAILY SPENDING-->
+    <string name="feedback_daily_spending_daily">Daily</string>
+    <string name="feedback_daily_spending_total_spending">Total Spending</string>
+    <string name="feedback_daily_spending_total_etb">ETB</string>
+    <string name="feedback_daily_spending_total_time">Time</string>
+    <string name="feedback_daily_spending_spending_item">Spending</string>
+    <string name="feedback_daily_spending_spending_total_revenue">Total Revenue</string>
+
+    <!--    FEEDBACK MONTHLY SPENDING-->
+    <string name="feedback_monthly_spending_monthly">Monthly</string>
+    <string name="feedback_monthly_spending_today">Today</string>
+    <string name="feedback_monthly_spending_week">Week</string>
+    <string name="feedback_monthly_spending_month">Month</string>
+    <string name="feedback_monthly_spending_monthly_spendings">Monthly Spendings</string>
+    <string name="feedback_monthly_spending_view_all">View All</string>
+
+    <!--    TRANSACTION ITEM-->
+
+    <string name="transaction_amount">Transaction Amount</string>
+    <string name="transaction_reason">Transaction reason</string>
+    <string name="transaction_add">Add Transaction</string>
+
+    <!--    FEEDBACK DAILY SPENDING-->
+    <string name="feedback_total_spending">Total Spending</string>
+    <string name="feedback_total_revenue">Total Revenue</string>
 
 </resources>

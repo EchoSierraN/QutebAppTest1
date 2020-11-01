@@ -6,78 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".board.fragments.DashboardSpendingFragment">
 
+    <ImageView
+        android:layout_width="695dp"
+        android:layout_height="695dp"
+        android:background="@drawable/ic_background_activity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.327"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444" />
+
+
     <TextView
-        android:id="@+id/tv_feedback_daily_spending_daily"
+        android:id="@+id/tv_feedback_monthly_spending_monthly"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="57dp"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textAlignment="center"
-        android:text="@string/feedback_daily_spending_daily"
+        android:text="@string/feedback_monthly_spending_month"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_feedback_daily_spending_total_spendings"
+        android:id="@+id/tv_feedback_monthly_spending_total_revenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:text="@string/feedback_daily_spending_total_spending"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_feedback_daily_spending_total_revenue"
-        android:layout_width="138dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="212dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/feedback_daily_spending_spending_total_revenue"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_feedback_monthly"
         app:layout_constraintEnd_toStartOf="@+id/tv_feedback_daily_spending_daily4"
         app:layout_constraintHorizontal_bias="0.765"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tv_feedback_daily_spending_daily4"
+        android:id="@+id/tv_feedback_monthly_spending_view_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="212dp"
-        android:layout_marginEnd="88dp"
-        android:text="ETB 10,000"
+        android:layout_marginEnd="48dp"
+        android:text="@string/feedback_monthly_spending_view_all"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_feedback_daily_spending_total_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
-        android:text="ETB 2,500"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_feedback_monthly_spending_total_revenue"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="385dp"
-        android:layout_height="455dp"
-        android:layout_marginStart="12dp"
+        android:background="@color/white"
+        android:id="@+id/rv_feedback_monthly"
+        android:layout_width="match_parent"
+        android:layout_height="364dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -92,4 +77,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_feedback_daily_spending_daily"
         app:tint="@color/black" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="332dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="108dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Month" />
+    </com.google.android.material.tabs.TabLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

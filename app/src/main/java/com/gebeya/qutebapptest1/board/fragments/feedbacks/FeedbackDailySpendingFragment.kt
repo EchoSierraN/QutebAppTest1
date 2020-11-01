@@ -1,4 +1,4 @@
-package com.gebeya.qutebapptest1.board.fragments
+package com.gebeya.qutebapptest1.board.fragments.feedbacks
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

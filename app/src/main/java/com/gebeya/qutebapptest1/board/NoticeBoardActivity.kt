@@ -8,6 +8,7 @@ import com.gebeya.qutebapptest1.board.fragments.DashboardIncomeFragment
 import com.gebeya.qutebapptest1.board.fragments.FavoritesFragment
 import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
 import com.gebeya.qutebapptest1.board.fragments.SettingsFragment
+import com.gebeya.qutebapptest1.board.fragments.feedbacks.FeedbackMonthlySpendingFragment
 import kotlinx.android.synthetic.main.activity_notice_board.*
 
 class NoticeBoardActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class NoticeBoardActivity : AppCompatActivity() {
         val adapter= ViewPagerAdapter(supportFragmentManager)
         adapter.addFragment(DashboardSpendingFragment(), "")
         adapter.addFragment(DashboardIncomeFragment(), "")
+        adapter.addFragment(FeedbackMonthlySpendingFragment(), "")
         //adapter.addFragment(FavoritesFragment(), "")
         //adapter.addFragment(SettingsFragment(), "")
 
@@ -30,6 +32,6 @@ class NoticeBoardActivity : AppCompatActivity() {
 
         dashboard_tabs.getTabAt(0)!!.setIcon(R.drawable.ic_bar_chart)
         dashboard_tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_attach_money_24)
-        //dashboard_tabs.getTabAt(2)!!.setIcon(R.drawable.ic_baseline_favorite_24)
+        dashboard_tabs.getTabAt(2)!!.setIcon(R.drawable.arrow_up)
     }
 }

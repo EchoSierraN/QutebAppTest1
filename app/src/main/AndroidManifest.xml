@@ -11,15 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".board.fragments.entryCategories.SpendingCategoryActivity"></activity>
-        <activity android:name=".board.NoticeBoardActivity" />
+        <activity android:name=".board.fragments.entryCategories.entities.IncomeTransactionEntity"></activity>
+        <activity android:name=".board.fragments.entryCategories.entities.SpendingTransactionEntry" />
+        <activity android:name=".board.fragments.entryCategories.SpendingCategoryActivity" />
+        <activity android:name=".welcome.SplashActivity" />
         <activity android:name=".login.SignUpActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".welcome.Welcome3Activity" />
         <activity android:name=".welcome.Welcome2Activity" />
         <activity android:name=".welcome.Welcome1Activity" />
-        <activity android:name=".board.fragments.entryCategories.IncomeCategoryActivity"/>
-        <activity android:name=".welcome.SplashActivity">
+        <activity android:name=".board.fragments.entryCategories.IncomeCategoryActivity" />
+        <activity android:name=".board.NoticeBoardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

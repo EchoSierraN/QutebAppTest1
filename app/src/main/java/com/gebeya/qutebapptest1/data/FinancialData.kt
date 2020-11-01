@@ -7,12 +7,12 @@ import kotlin.collections.ArrayList
 
 object FinancialData {
     var incomeData: ArrayList<IncomeModel> = arrayListOf(
-        IncomeModel(incomeCategories.DAY_JOB,"Web design", 15000f, Date(2020, 10, 2)),
-        IncomeModel(incomeCategories.DIGITAL_ASSET_SALES,"Digital asset sales", 2000f, Date(2020, 10, 2))
+        IncomeModel(incomeCategories.DAY_JOB,"Web design", 15000.0, Date(2020, 10, 2).toString()),
+        IncomeModel(incomeCategories.DIGITAL_ASSET_SALES,"Digital asset sales", 2000.0, Date(2020, 10, 2).toString())
     )
     var spendingData: ArrayList<SpendingModel> = arrayListOf(
-        SpendingModel(spendingCategories.ENTERTAINMENT,"Movies", 250f, Date(2020, 10, 26)),
-        SpendingModel(spendingCategories.FAMILY_AND_PERSONAL,"Transportation", 300f, Date(2020, 10, 26))
+        SpendingModel(spendingCategories.ENTERTAINMENT,"Movies", 250.0, Date(2020, 10, 26).toString()),
+        SpendingModel(spendingCategories.FAMILY_AND_PERSONAL,"Transportation", 300.0, Date(2020, 10, 26).toString())
     )
 
     var incomeCategoryData: ArrayList<IncomeDataModel> = arrayListOf(
@@ -22,8 +22,9 @@ object FinancialData {
     )
 
     var spendingCategoryData: ArrayList<SpendingDataModel> = arrayListOf(
-        SpendingDataModel(R.drawable.ic_baseline_account_circle_24, "Family and Personal", 0),
-        SpendingDataModel(R.drawable.ic_baseline_games_24, "Entertainment", 0),
-        SpendingDataModel(R.drawable.ic_baseline_fastfood_24, "Food", 0)
+
+        SpendingDataModel(R.drawable.ic_baseline_account_circle_24, "Family and Personal", 0),  /*id=0*/
+        SpendingDataModel(R.drawable.ic_baseline_games_24, "Entertainment", 0), /*id=1*/
+        SpendingDataModel(R.drawable.ic_baseline_fastfood_24, "Food", 0)    /*id=2*/
     )
 }

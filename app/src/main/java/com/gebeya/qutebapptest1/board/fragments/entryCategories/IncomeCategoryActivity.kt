@@ -15,6 +15,9 @@ import kotlinx.android.synthetic.main.fragment_dashboard_income.*
 import kotlinx.android.synthetic.main.layout_dashboard_summary.*
 
 class IncomeCategoryActivity : AppCompatActivity() {
+    companion object{
+        var currentCategoryId= 0
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_income_category)

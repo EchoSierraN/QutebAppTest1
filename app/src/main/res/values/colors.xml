@@ -17,6 +17,7 @@
 
     <!--    BLUE-->
     <color name="blue">#506AFF</color>
+    <color name="blue_background_tint">#EAF7FF</color>
 
     <color name="gray_light">#E6E6FA</color>
     <color name="gray_dashboard">#F5F6FF</color>

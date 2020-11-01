@@ -1,19 +1,20 @@
 package com.gebeya.qutebapptest1.model
 
+import java.time.LocalDate
 import java.util.*
 
 data class IncomeModel(
     var incomeCategory: incomeCategories = incomeCategories.DAY_JOB,
     var incomeSource: String = "DefaultIncome",
-    var incomeAmount: Float = 0.0f,
-    var incomeDate: Date = Date(2020, 8, 23)
+    var incomeAmount: Double = 0.0,
+    var incomeDate: String = Date().toString()
 )
 
 data class SpendingModel(
     var spendingCategory: spendingCategories = spendingCategories.FAMILY_AND_PERSONAL,
     var spendingSource: String,
-    var spendingAmount: Float,
-    var spendingDate: Date = Date(2020, 8, 23)
+    var spendingAmount: Double,
+    var spendingDate: String= Date().toString()
 )
 
 enum class spendingCategories {
@@ -21,7 +22,9 @@ enum class spendingCategories {
 }
 
 enum class incomeCategories {
-    DAY_JOB, DIGITAL_ASSET_SALES, CONTENT_CREATION
+    DAY_JOB,    /*id=0*/
+    DIGITAL_ASSET_SALES,    /*id=1*/
+    CONTENT_CREATION    /*id=2*/
 }
 
 data class SpendingDataModel(

@@ -47,9 +47,7 @@ class SignUpActivity : AppCompatActivity() {
 
         btn_signup_signup.setOnClickListener {
             if (cb_signup_i_agree_to_terms.isChecked) {
-                //enteredDataCheck()
-                startActivity(Intent(this@SignUpActivity, NoticeBoardActivity::class.java))
-                finish()
+                enteredDataCheck()
             }
         }
 
@@ -97,14 +95,17 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         if (et_signup_password.text.toString() != et_signup_confirm_password.text.toString()) {
-            Toast.makeText(this, "Passwords don't match", Toast.LENGTH_LONG).show()
+            et_signup_password.error= "Passwords don't match"
+            et_signup_password.requestFocus()
             return
         }
 
         email = et_signup_phone_email.text.toString()
         password = et_signup_password.text.toString()
 
-        signInUser(fullName, email, password)
+        //signInUser(fullName, email, password)
+        startActivity(Intent(this@SignUpActivity, NoticeBoardActivity::class.java))
+        finish()
 
     }
 
