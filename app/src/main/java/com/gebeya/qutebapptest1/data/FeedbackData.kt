@@ -2,10 +2,6 @@ package com.gebeya.qutebapptest1.data
 
 import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.model.FeedbackSpendingModel
-import com.gebeya.qutebapptest1.model.SpendingModel
-import com.gebeya.qutebapptest1.model.spendingCategories
-import java.util.*
-import kotlin.collections.ArrayList
 
 object FeedbackData {
     var monthlySpendingData = arrayListOf(

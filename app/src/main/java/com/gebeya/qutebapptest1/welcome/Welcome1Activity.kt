@@ -17,5 +17,9 @@ class Welcome1Activity : AppCompatActivity() {
         tv_welcome1_welcome.setOnClickListener {
             startActivity(Intent(this, Welcome2Activity::class.java))
         }
+
+        cl_welcome1_rootLayout.setOnClickListener{
+            startActivity(Intent(this, Welcome2Activity::class.java))
+        }
     }
 }

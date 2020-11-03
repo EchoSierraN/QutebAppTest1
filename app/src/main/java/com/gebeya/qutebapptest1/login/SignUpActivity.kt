@@ -29,7 +29,6 @@ class SignUpActivity : AppCompatActivity() {
     //endregion
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
@@ -53,7 +52,6 @@ class SignUpActivity : AppCompatActivity() {
 
     }
 
-
     private fun enteredDataCheck() {
 
         //region This probably only works below API level 30
@@ -68,6 +66,21 @@ class SignUpActivity : AppCompatActivity() {
         email = et_signup_phone_email.text.toString()
         password = et_signup_password.text.toString()
         confirmPassword = et_signup_confirm_password.text.toString()
+
+        //region MINIMUM LENGTH
+        val minFullNameLength= 5
+        val minPasswordLength= 5
+
+        if(et_signup_your_first_name.text.toString().length< 5){
+            et_signup_your_first_name.error= "Minimum character length is 5"
+            return
+        }
+
+        if(et_signup_password.text.toString().length< 6){
+            et_signup_password.error= "Minimum password length is 6"
+            return
+        }
+        //endregion
 
         if (!LoginActivity.emailRegex.matcher(email).matches()) {
             et_signup_phone_email.error = "Please enter valid email."

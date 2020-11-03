@@ -10,13 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.board.fragments.entryCategories.IncomeCategoryActivity
 import com.gebeya.qutebapptest1.board.fragments.entryCategories.entities.IncomeTransactionEntity
-import com.gebeya.qutebapptest1.board.fragments.entryCategories.entities.SpendingTransactionEntry
 import com.gebeya.qutebapptest1.model.IncomeDataModel
-import com.gebeya.qutebapptest1.model.IncomeModel
-import com.gebeya.qutebapptest1.model.incomeCategories
-import com.gebeya.qutebapptest1.model.spendingCategories
 import kotlinx.android.synthetic.main.layout_category_item.view.*
-import kotlinx.android.synthetic.main.layout_transaction_item.view.*
 
 
 class IncomeCategoryAdapter(private var arrayList: ArrayList<IncomeDataModel>, context: Context) :

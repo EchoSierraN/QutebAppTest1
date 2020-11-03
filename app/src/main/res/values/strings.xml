@@ -23,7 +23,7 @@
     <string name="login_sign_up">SIGN UP</string>
 
     <!--    SIGNUP-->
-    <string name="signup_create_an_account">CREATE AN ACCOUNT</string>
+    <string name="signup_create_an_account">Create an account</string>
     <string name="signup_your_first_name">Your First Name</string>
     <string name="signup_phone_number_email">Phone number/ Email</string>
     <string name="signup_password">Password</string>

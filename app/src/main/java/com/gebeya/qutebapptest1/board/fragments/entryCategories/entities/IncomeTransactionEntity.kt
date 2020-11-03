@@ -10,17 +10,16 @@ import com.gebeya.qutebapptest1.board.NoticeBoardActivity
 import com.gebeya.qutebapptest1.board.fragments.entryCategories.IncomeCategoryActivity
 import com.gebeya.qutebapptest1.data.FinancialData
 import com.gebeya.qutebapptest1.model.IncomeModel
-import com.gebeya.qutebapptest1.model.incomeCategories
+import com.gebeya.qutebapptest1.model.IncomeCategories
 import kotlinx.android.synthetic.main.activity_income_transaction_entity.*
-import java.lang.Double
 import java.util.*
 
 class IncomeTransactionEntity : AppCompatActivity() {
     private var category = when (IncomeCategoryActivity.Companion.currentCategoryId) {
-        0 -> incomeCategories.DAY_JOB
-        1 -> incomeCategories.DIGITAL_ASSET_SALES
-        2 -> incomeCategories.CONTENT_CREATION
-        else -> incomeCategories.DAY_JOB
+        0 -> IncomeCategories.DAY_JOB
+        1 -> IncomeCategories.DIGITAL_ASSET_SALES
+        2 -> IncomeCategories.CONTENT_CREATION
+        else -> IncomeCategories.DAY_JOB
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

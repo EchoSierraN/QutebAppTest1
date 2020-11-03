@@ -65,6 +65,8 @@ data class SignupResponse(
 )
 //endregion
 
+
+
 //region ====MISCELLANEOUS====
 object Constants {
     const val BASE_URL = "https://4bb793bb-4027-4e56-bd6a-28e7b1c01756.mock.pstmn.io"

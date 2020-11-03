@@ -17,6 +17,12 @@ class Welcome3Activity : AppCompatActivity() {
 
         tv_welcome3_zero_fees.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
+        cl_welcome3_rootLayout.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
     }
 }

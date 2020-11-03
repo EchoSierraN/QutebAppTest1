@@ -15,9 +15,9 @@ class FeedMonthSpendingAdapter(private var arrayList: ArrayList<FeedbackSpending
         fun bindItems(model: FeedbackSpendingModel){
 
 //            when(model.spendingCategory){
-//                spendingCategories.FAMILY_AND_PERSONAL-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_account_circle_24)
-//                spendingCategories.FOOD-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_fastfood_24)
-//                spendingCategories.ENTERTAINMENT-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_games_24)
+//                SpendingCategories.FAMILY_AND_PERSONAL-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_account_circle_24)
+//                SpendingCategories.FOOD-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_fastfood_24)
+//                SpendingCategories.ENTERTAINMENT-> itemView.iv_item.setImageResource(R.drawable.ic_baseline_games_24)
 //            }
 
             itemView.iv_change.setImageResource(model.image)

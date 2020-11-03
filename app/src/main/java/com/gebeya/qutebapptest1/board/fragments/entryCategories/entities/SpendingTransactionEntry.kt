@@ -10,17 +10,16 @@ import com.gebeya.qutebapptest1.board.NoticeBoardActivity
 import com.gebeya.qutebapptest1.board.fragments.entryCategories.SpendingCategoryActivity
 import com.gebeya.qutebapptest1.data.FinancialData
 import com.gebeya.qutebapptest1.model.SpendingModel
-import com.gebeya.qutebapptest1.model.spendingCategories
+import com.gebeya.qutebapptest1.model.SpendingCategories
 import kotlinx.android.synthetic.main.activity_spending_transaction_entry.*
-import java.lang.Double.parseDouble
 import java.util.*
 
 class SpendingTransactionEntry : AppCompatActivity() {
     private var category = when (SpendingCategoryActivity.Companion.currentCategoryId) {
-        0 -> spendingCategories.ENTERTAINMENT
-        1 -> spendingCategories.FAMILY_AND_PERSONAL
-        2 -> spendingCategories.FOOD
-        else -> spendingCategories.ENTERTAINMENT
+        0 -> SpendingCategories.ENTERTAINMENT
+        1 -> SpendingCategories.FAMILY_AND_PERSONAL
+        2 -> SpendingCategories.FOOD
+        else -> SpendingCategories.ENTERTAINMENT
     }
 
 
