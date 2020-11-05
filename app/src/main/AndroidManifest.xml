@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".board.fragments.entryCategories.entities.IncomeTransactionEntity"></activity>
+        <activity android:name=".welcome.ForgotPasswordActivity"></activity>
+        <activity android:name=".board.fragments.entryCategories.entities.IncomeTransactionEntity" />
         <activity android:name=".board.fragments.entryCategories.entities.SpendingTransactionEntry" />
         <activity android:name=".board.fragments.entryCategories.SpendingCategoryActivity" />
         <activity android:name=".board.NoticeBoardActivity" />

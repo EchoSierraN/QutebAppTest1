@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.login.LoginActivity
+import kotlinx.android.synthetic.main.activity_welcome1.*
 import kotlinx.android.synthetic.main.activity_welcome3.*
 
 class Welcome3Activity : AppCompatActivity() {
@@ -21,6 +22,11 @@ class Welcome3Activity : AppCompatActivity() {
         }
 
         cl_welcome3_rootLayout.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
+        tv_welcome3_skip.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }

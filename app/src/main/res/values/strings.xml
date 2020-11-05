@@ -13,14 +13,20 @@
     <string name="welcome3_zero_fees">ZERO FEES</string>
     <string name="welcome3_bank_your_life">Bank your life. We have created something new for you.</string>
 
+    <!--    FORGOT YOUR PASSWORD-->
+    <string name="fyp_forgot_your_password">Forgot your password?</string>
+    <string name="fyp_enter_your_email">Enter your email below to retrieve your account.</string>
+    <string name="fyp_send_reset_link">Send password reset link</string>
+
     <!--    LOGIN-->
 
-    <string name="login_phone_number_email">PHONE/EMAIL ADDRESS</string>
+    <string name="login_email">EMAIL ADDRESS</string>
     <string name="login_password">PASSWORD</string>
     <string name="login_remember_me">REMEMBER ME</string>
     <string name="login_dont_have_an_account">DON\'T HAVE ACCOUNT?</string>
     <string name="login_sign_in">SIGN IN</string>
     <string name="login_sign_up">SIGN UP</string>
+    <string name="login_forgot_password">Forgot password?</string>
 
     <!--    SIGNUP-->
     <string name="signup_create_an_account">Create an account</string>
@@ -48,6 +54,7 @@
     <!--    MISCELLANEOUS-->
     <string name="birr_short">br</string>
     <string name="birr_long">birr</string>
+    <string name="skip">Skip</string>
 
     <!--    CATEGORIES-->
     <string name="categories_categories">CATEGORIES</string>

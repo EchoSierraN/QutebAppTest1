@@ -35,8 +35,12 @@ data class LoginRequest(
 data class LoginResponse(
     @SerializedName("fullName")
     var fullName: String,
+    @SerializedName("id")
+    var id: String,
     @SerializedName("email")
     var email: String,
+    @SerializedName("expiration")
+    var expiration: Date,
     @SerializedName("key")
     var token: String
 )
@@ -64,8 +68,6 @@ data class SignupResponse(
     var token: String
 )
 //endregion
-
-
 
 //region ====MISCELLANEOUS====
 object Constants {
