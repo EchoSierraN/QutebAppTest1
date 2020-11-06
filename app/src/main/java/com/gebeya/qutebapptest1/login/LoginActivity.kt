@@ -9,6 +9,8 @@ import android.widget.Toast
 import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.authentication.ApiClient
 import com.gebeya.qutebapptest1.authentication.SessionManager
+import com.gebeya.qutebapptest1.authentication.SessionManager.Companion.apiClient
+import com.gebeya.qutebapptest1.authentication.SessionManager.Companion.sessionManager
 import com.gebeya.qutebapptest1.board.NoticeBoardActivity
 import com.gebeya.qutebapptest1.model.LoginRequest
 import com.gebeya.qutebapptest1.model.LoginResponse
@@ -39,8 +41,8 @@ class LoginActivity : AppCompatActivity() {
 
         /*Maybe put these definitions somewhere else? Somewhere more common
         * to all activities?*/
-        lateinit var sessionManager: SessionManager
-        lateinit var apiClient: ApiClient
+//        lateinit var sessionManager: SessionManager
+//        lateinit var apiClient: ApiClient
     }
 
     private lateinit var email: String
@@ -109,6 +111,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun checkLoginDetails(authToken: String) {
+
+        apiClient= ApiClient()
+        sessionManager= SessionManager(this)
 
         apiClient.getApiService(this).login(LoginRequest(email, password))
             .enqueue(object : Callback<LoginResponse> {

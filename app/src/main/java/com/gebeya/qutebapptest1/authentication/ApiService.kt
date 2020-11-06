@@ -21,14 +21,16 @@ interface ApiService {
     @POST(Constants.SIGNUP_URL)
     fun signup(@Body request: SignupRequest): Call<SignupResponse>
 
-//    @GET(Constants.POSTS_URL)
-//    fun fetchPosts(): Call<PostsResponse>
+
 
     //region REST FUNCTIONS: DashboardSpendingFragment
 
-    
+
     //endregion
 
     //endregion
 
 }
+
+//    @GET(Constants.POSTS_URL)
+//    fun fetchPosts(): Call<PostsResponse>

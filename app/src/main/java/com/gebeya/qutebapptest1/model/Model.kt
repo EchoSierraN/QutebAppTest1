@@ -40,7 +40,7 @@ data class LoginResponse(
     @SerializedName("email")
     var email: String,
     @SerializedName("expiration")
-    var expiration: Date,
+    var expiration: String,
     @SerializedName("key")
     var token: String
 )
@@ -61,20 +61,22 @@ data class SignupResponse(
     @SerializedName("fullName")
     var fullName: String,
     @SerializedName("expiration")
-    var expiration: Date,
+    var expiration: String,
     @SerializedName("email")
     var email: String,
-    @SerializedName("key")
-    var token: String
+    @SerializedName("token")
+    var token: String,
+    @SerializedName("id")
+    var id: Int
 )
 //endregion
 
 //region ====MISCELLANEOUS====
 object Constants {
-    const val BASE_URL = "https://4bb793bb-4027-4e56-bd6a-28e7b1c01756.mock.pstmn.io"
+    const val BASE_URL = "https://qutebapp-api.apps.et6om.gebeya.co/"
     const val LOGIN_URL = "api/auth/signin-Email"
     const val SIGNUP_URL = "api/auth/signup-Email"
-    const val POSTS_URL = "posts"
+    //const val POSTS_URL = "posts"
 }
 
 object Prefs{

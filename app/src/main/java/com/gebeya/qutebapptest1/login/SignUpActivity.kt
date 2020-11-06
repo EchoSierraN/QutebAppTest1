@@ -1,23 +1,24 @@
 package com.gebeya.qutebapptest1.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.authentication.ApiClient
 import com.gebeya.qutebapptest1.authentication.SessionManager
 import com.gebeya.qutebapptest1.board.NoticeBoardActivity
-import com.gebeya.qutebapptest1.login.LoginActivity.Companion.sessionManager
-import com.gebeya.qutebapptest1.model.LoginRequest
-import com.gebeya.qutebapptest1.model.LoginResponse
+import com.gebeya.qutebapptest1.board.fragments.DashboardIncomeFragment
+import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
 import com.gebeya.qutebapptest1.model.SignupRequest
 import com.gebeya.qutebapptest1.model.SignupResponse
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
+const val DASHBOARD_NAME= "intentNoticeBoardActivity"
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -27,6 +28,9 @@ class SignUpActivity : AppCompatActivity() {
     var password = ""
     var confirmPassword = ""
     //endregion
+
+    private lateinit var apiClient: ApiClient
+    lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,17 +120,15 @@ class SignUpActivity : AppCompatActivity() {
         email = et_signup_phone_email.text.toString()
         password = et_signup_password.text.toString()
 
-        //signInUser(fullName, email, password)
-        startActivity(Intent(this@SignUpActivity, NoticeBoardActivity::class.java))
-        finish()
+        signUpUser(fullName, email, password)
 
     }
 
-    private fun signInUser(fullName: String, email: String, password: String) {
-        LoginActivity.apiClient = ApiClient()
+    private fun signUpUser(fullName: String, email: String, password: String) {
+        apiClient = ApiClient()
         sessionManager = SessionManager(this)
 
-        LoginActivity.apiClient.getApiService(this).signup(SignupRequest(fullName, email, password))
+        apiClient.getApiService(this).signup(SignupRequest(fullName, email, password))
             .enqueue(object : Callback<SignupResponse> {
                 override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
                     Toast.makeText(applicationContext, "OnFailure Called!", Toast.LENGTH_LONG)
@@ -148,9 +150,27 @@ class SignUpActivity : AppCompatActivity() {
                                 Toast.LENGTH_LONG
                             ).show()
 
+                            //get all data from response, save it in sessionmanager
                             sessionManager.saveAuthToken(SignupResponse!!.token)
+                            sessionManager.saveCurrentUserData(
+                                SignupResponse.fullName,
+                                SignupResponse.id,
+                                SignupResponse.email,
+                                SignupResponse.expiration,
+                                SignupResponse.token
+                            )
+
+                            //send the data you need to the next activity
+                            val bundle= Bundle()
+                            bundle.putString(DASHBOARD_NAME, fullName)
+                            val fragSpending = DashboardSpendingFragment()
+                            val fragIncome= DashboardIncomeFragment()
+                            fragSpending.arguments= bundle
+                            fragIncome.arguments= bundle
+
                             //Move to the next activity
-                            startActivity(Intent(this@SignUpActivity, NoticeBoardActivity::class.java))
+                            var intentNoticeBoardActivity= Intent(this@SignUpActivity, NoticeBoardActivity::class.java)
+                            startActivity(intentNoticeBoardActivity)
                             finish()
                         }
 

@@ -3,6 +3,7 @@ package com.gebeya.qutebapptest1.authentication
 import android.content.Context
 import android.content.SharedPreferences
 import com.gebeya.qutebapptest1.R
+import java.util.*
 
 /**
  * Session manager to save and fetch data from SharedPreferences
@@ -14,7 +15,16 @@ class SessionManager(context: Context) {
 
     companion object {
         const val USER_TOKEN = "user_token"
+        const val USER_NAME = "user_name"
+        const val USER_ID = "user_id"
+        const val USER_EMAIL = "user_email"
+        const val USER_TOKEN_EXPIRATION= "user_token_expiration"
         const val REMEMBER_USER = "remember_me"
+
+        /*Maybe put these definitions somewhere else? Somewhere more common
+        * to all activities?*/
+        lateinit var sessionManager: SessionManager
+        lateinit var apiClient: ApiClient
     }
 
     /**
@@ -23,6 +33,14 @@ class SessionManager(context: Context) {
     fun saveAuthToken(token: String) {
         editor.putString(USER_TOKEN, token)
         editor.apply()
+    }
+
+    fun saveCurrentUserData(userName: String, userid: Int, userEmail: String, userTokenExpiration: String, userToken: String){
+        editor.putString(USER_NAME, userName)
+        editor.putInt(USER_ID, userid)
+        editor.putString(USER_TOKEN_EXPIRATION, userTokenExpiration)
+        editor.putString(USER_EMAIL, userEmail)
+        editor.putString(USER_TOKEN, userToken)
     }
 
     /**
