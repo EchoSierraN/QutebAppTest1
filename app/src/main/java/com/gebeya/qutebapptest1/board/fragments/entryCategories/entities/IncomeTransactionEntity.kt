@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.gebeya.qutebapptest1.R
+import com.gebeya.qutebapptest1.board.BottomNavBoard
 import com.gebeya.qutebapptest1.board.NoticeBoardActivity
 import com.gebeya.qutebapptest1.board.fragments.entryCategories.IncomeCategoryActivity
 import com.gebeya.qutebapptest1.data.FinancialData
@@ -70,7 +71,8 @@ class IncomeTransactionEntity : AppCompatActivity() {
                 Date().toString()
             )
         )
-        startActivity(Intent(this, NoticeBoardActivity::class.java))
+        //startActivity(Intent(this, NoticeBoardActivity::class.java))
+        startActivity(Intent(this, BottomNavBoard::class.java))
         finish()
     }
 }

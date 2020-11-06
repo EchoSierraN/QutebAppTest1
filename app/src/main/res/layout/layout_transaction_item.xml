@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginBottom="10dp"
-    android:layout_width="306dp"
+    android:layout_width="match_parent"
     android:layout_height="74dp">
 
     <ImageView
@@ -44,13 +44,26 @@
         android:id="@+id/tv_item_amount"
         android:layout_width="93dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
         android:text="-3.87 br"
+        android:layout_marginEnd="16dp"
         android:textAlignment="textEnd"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_transaction_menu"
+        app:layout_constraintStart_toEndOf="@+id/tv_item_source"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.465" />
+
+    <ImageView
+        android:id="@+id/iv_transaction_menu"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        app:tint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu_more" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,7 +22,6 @@ object FinancialData {
     )
 
     var spendingCategoryData: ArrayList<SpendingDataModel> = arrayListOf(
-
         SpendingDataModel(R.drawable.ic_baseline_account_circle_24, "Family and Personal", 0),  /*id=0*/
         SpendingDataModel(R.drawable.ic_baseline_games_24, "Entertainment", 0), /*id=1*/
         SpendingDataModel(R.drawable.ic_baseline_fastfood_24, "Food", 0)    /*id=2*/

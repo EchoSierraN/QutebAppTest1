@@ -1,6 +1,7 @@
 package com.gebeya.qutebapptest1.board.bottomNavBoard
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
 import com.gebeya.qutebapptest1.board.fragments.feedbacks.FeedbackMonthlySpendingFragment
 import kotlinx.android.synthetic.main.activity_notice_board.*
 import kotlinx.android.synthetic.main.fragment_dashboard.*
+import kotlin.math.log
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,25 +31,26 @@ class DashboardFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Log.d(this::class.java.simpleName, "OnCreate called.")
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        Log.d(this::class.java.simpleName, "OnCreateView called.")
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
 
     override fun onResume() {
         super.onResume()
+        Log.d(this::class.java.simpleName, "OnResume called.")
         setupTabs()
     }
 
     private fun setupTabs() {
-        adapter = ViewPagerAdapter(fragmentManager!!)
+        adapter = ViewPagerAdapter(this.childFragmentManager!!)
         adapter.addFragment(DashboardSpendingFragment(), "")
         adapter.addFragment(DashboardIncomeFragment(), "")
         adapter.addFragment(FeedbackMonthlySpendingFragment(), "")
