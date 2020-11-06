@@ -22,6 +22,9 @@ const val DASHBOARD_NAME= "intentNoticeBoardActivity"
 
 class SignUpActivity : AppCompatActivity() {
 
+    lateinit var apiClient: ApiClient
+    lateinit var sessionManager: SessionManager
+
     //region DEFINITIONS
     var fullName = ""
     var email = "something@gmail.com"
@@ -29,12 +32,12 @@ class SignUpActivity : AppCompatActivity() {
     var confirmPassword = ""
     //endregion
 
-    private lateinit var apiClient: ApiClient
-    lateinit var sessionManager: SessionManager
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
+
+        apiClient = ApiClient()
+        sessionManager = SessionManager(this)
 
         //we don't want the action bar
         supportActionBar?.hide()
@@ -125,21 +128,20 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun signUpUser(fullName: String, email: String, password: String) {
-        apiClient = ApiClient()
-        sessionManager = SessionManager(this)
-
         apiClient.getApiService(this).signup(SignupRequest(fullName, email, password))
             .enqueue(object : Callback<SignupResponse> {
                 override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
-                    Toast.makeText(applicationContext, "OnFailure Called!", Toast.LENGTH_LONG)
+                    Toast.makeText(applicationContext, "OnFailure Called! ", Toast.LENGTH_LONG)
                         .show()
+
+                    Log.d("AuthError", t.message.toString())
                 }
 
                 override fun onResponse(
                     call: Call<SignupResponse>,
                     response: Response<SignupResponse>
                 ) {
-                    val SignupResponse = response.body()
+                    val signupResponse = response.body()
 
                     when (response.code()) {
 
@@ -151,13 +153,13 @@ class SignUpActivity : AppCompatActivity() {
                             ).show()
 
                             //get all data from response, save it in sessionmanager
-                            sessionManager.saveAuthToken(SignupResponse!!.token)
+                            sessionManager.saveAuthToken(signupResponse!!.token)
                             sessionManager.saveCurrentUserData(
-                                SignupResponse.fullName,
-                                SignupResponse.id,
-                                SignupResponse.email,
-                                SignupResponse.expiration,
-                                SignupResponse.token
+                                signupResponse.fullName,
+                                signupResponse.id,
+                                signupResponse.email,
+                                signupResponse.expiration,
+                                signupResponse.token
                             )
 
                             //send the data you need to the next activity

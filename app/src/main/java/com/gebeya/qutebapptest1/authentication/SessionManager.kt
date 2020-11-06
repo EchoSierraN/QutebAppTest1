@@ -35,6 +35,11 @@ class SessionManager(context: Context) {
         editor.apply()
     }
 
+    fun deleteAuthToken(){
+        editor.remove(USER_TOKEN)
+        editor.apply()
+    }
+
     fun saveCurrentUserData(userName: String, userid: Int, userEmail: String, userTokenExpiration: String, userToken: String){
         editor.putString(USER_NAME, userName)
         editor.putInt(USER_ID, userid)

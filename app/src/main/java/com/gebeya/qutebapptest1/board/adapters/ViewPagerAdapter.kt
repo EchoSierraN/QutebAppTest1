@@ -3,6 +3,7 @@ package com.gebeya.qutebapptest1.board.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import java.security.PrivateKey
 
 class ViewPagerAdapter(var supportFragmentManager: FragmentManager): FragmentPagerAdapter(supportFragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
@@ -24,5 +25,10 @@ class ViewPagerAdapter(var supportFragmentManager: FragmentManager): FragmentPag
     fun addFragment(fragment: Fragment, title: String){
         mFragmentList.add(fragment)
         mFragmentTitleList.add(title)
+    }
+
+    fun clearAdapter(){
+        mFragmentList.clear()
+        mFragmentTitleList.clear()
     }
 }

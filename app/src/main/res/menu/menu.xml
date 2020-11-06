@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_Dashboard"
+        android:icon="@drawable/ic_bar_chart"
+        android:title="Dashboard"
+        />
+    <item
+        android:id="@+id/menu_Spending"
+        android:icon="@drawable/ic_baseline_attach_money_24"
+        android:title="Spending"
+        />
+    <item
+        android:id="@+id/menu_Feedback"
+        android:icon="@drawable/arrow_up"
+        android:title="Feedback"
+        />
+
+</menu>

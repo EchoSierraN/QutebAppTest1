@@ -16,7 +16,7 @@ class NoticeBoardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notice_board)
 
-        setUpTabs()
+        //setUpTabs()
     }
 
     private fun setUpTabs() {

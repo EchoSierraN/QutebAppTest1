@@ -73,7 +73,7 @@ data class SignupResponse(
 
 //region ====MISCELLANEOUS====
 object Constants {
-    const val BASE_URL = "https://qutebapp-api.apps.et6om.gebeya.co/"
+    const val BASE_URL = "http://qutebapp-api.apps.et6om.gebeya.co/"
     const val LOGIN_URL = "api/auth/signin-Email"
     const val SIGNUP_URL = "api/auth/signup-Email"
     //const val POSTS_URL = "posts"
