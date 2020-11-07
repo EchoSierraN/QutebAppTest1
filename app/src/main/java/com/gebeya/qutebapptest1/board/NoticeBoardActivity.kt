@@ -17,6 +17,7 @@ class NoticeBoardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_notice_board)
 
         //setUpTabs()
+
     }
 
     private fun setUpTabs() {

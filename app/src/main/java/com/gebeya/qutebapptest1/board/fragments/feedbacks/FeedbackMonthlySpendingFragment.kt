@@ -20,10 +20,6 @@ import kotlinx.android.synthetic.main.fragment_feedback_monthly_spending_fragmen
 
 
 class FeedbackMonthlySpendingFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
     lateinit var barChart: BarChart
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +32,11 @@ class FeedbackMonthlySpendingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feedback_monthly_spending_fragment, container, false)
+        return inflater.inflate(
+            R.layout.fragment_feedback_monthly_spending_fragment,
+            container,
+            false
+        )
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -49,7 +49,7 @@ class FeedbackMonthlySpendingFragment : Fragment() {
         rv_feedback_monthly.adapter = feedMonthSpendingAdapter
 
         //bar chart
-        barChart= barChart_monthly
+        barChart = barChart_monthly
         drawChart(barChart)
 
     }
@@ -68,20 +68,20 @@ class FeedbackMonthlySpendingFragment : Fragment() {
         barDataEntries.add(BarEntry(3f, 66f))
         barDataEntries.add(BarEntry(4f, 90f))
 
-        var barDataSet= BarDataSet(barDataEntries, "DataSet1")
+        var barDataSet = BarDataSet(barDataEntries, "DataSet1")
 
-        var data: BarData= BarData(barDataSet)
-        data.barWidth= .5f
+        var data: BarData = BarData(barDataSet)
+        data.barWidth = .5f
 
-        barChart.data= data
+        barChart.data = data
 
         var months: Array<String> = arrayOf("Jan", "Feb", "Mar", "April", "May")
-        var xAxis: XAxis= barChart.xAxis
-        xAxis.valueFormatter= MyXAxisValueFormatter(months)
+        var xAxis: XAxis = barChart.xAxis
+        xAxis.valueFormatter = MyXAxisValueFormatter(months)
 
     }
-    
-    public class MyXAxisValueFormatter(var values: Array<String>): ValueFormatter() {
+
+    public class MyXAxisValueFormatter(var values: Array<String>) : ValueFormatter() {
         private var mValues: Array<String> = values
 
         /**

@@ -1,21 +1,32 @@
 package com.gebeya.qutebapptest1.board.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.gebeya.qutebapptest1.R
+import com.gebeya.qutebapptest1.board.fragments.entryCategories.SpendingCategoryActivity
+import com.gebeya.qutebapptest1.board.fragments.entryCategories.entities.SpendingTransactionEntry
 import com.gebeya.qutebapptest1.data.FinancialData
 import com.gebeya.qutebapptest1.model.SpendingModel
 import com.gebeya.qutebapptest1.model.SpendingCategories
-import com.gebeya.qutebapptest1.model.SpendingDataModel
 import kotlinx.android.synthetic.main.layout_transaction_item.view.*
 
 class DashSpendingAdapter(private var arrayList: ArrayList<SpendingModel>, context: Context) :
     RecyclerView.Adapter<DashSpendingAdapter.ViewHolder>() {
+    var context= context
+        companion object {
+            var REQUEST_CODE_EDIT_TRANSACTION: Int = 0
+            var editPosition: Int = -1
+
+            var EDIT_POSITION= "editPosition"
+            var EDIT_SPENDING_SOURCE= "editSpendingSource"
+            var EDIT_SPENDING_DATE= "editSpendingDate"
+            var EDIT_SPENDING_AMOUNT= "editSpendingAmount"
+        }
     inner class ViewHolder(listItemView: View) : RecyclerView.ViewHolder(listItemView) {
         fun bindItems(model: SpendingModel) {
 
@@ -36,7 +47,16 @@ class DashSpendingAdapter(private var arrayList: ArrayList<SpendingModel>, conte
                 popupMenu.setOnMenuItemClickListener {
                     when (it.itemId) {
                         R.id.item_menu_edit -> {
-                            //send the data of your edit to the entry activity
+                            //save the position
+                            editPosition= arrayList.indexOf(model)
+                            //startActivityForResult
+                            val intentSpendingTransEntry= Intent(context, SpendingTransactionEntry::class.java)
+                            intentSpendingTransEntry.putExtra(EDIT_SPENDING_SOURCE, model.spendingSource)
+                            intentSpendingTransEntry.putExtra(EDIT_SPENDING_DATE, model.spendingDate)
+                            intentSpendingTransEntry.putExtra(EDIT_SPENDING_AMOUNT, model.spendingAmount)
+                            intentSpendingTransEntry.putExtra(EDIT_POSITION, arrayList.indexOf(model))
+
+                            context.startActivity(intentSpendingTransEntry)
 
                             true
                         }
