@@ -13,7 +13,7 @@ data class SpendingModel(
     var spendingCategory: SpendingCategories = SpendingCategories.FAMILY_AND_PERSONAL,
     var spendingSource: String,
     var spendingAmount: Double,
-    var spendingDate: String= Date().toString()
+    var spendingDate: Date= Date()
 )
 
 enum class SpendingCategories {

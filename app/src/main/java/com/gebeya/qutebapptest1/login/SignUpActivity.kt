@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.authentication.ApiClient
 import com.gebeya.qutebapptest1.authentication.SessionManager
+import com.gebeya.qutebapptest1.board.BottomNavBoard
 import com.gebeya.qutebapptest1.board.NoticeBoardActivity
 import com.gebeya.qutebapptest1.board.fragments.DashboardIncomeFragment
 import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
@@ -53,10 +54,10 @@ class SignUpActivity : AppCompatActivity() {
 
         btn_signup_signup.setOnClickListener {
             if (cb_signup_i_agree_to_terms.isChecked) {
-                enteredDataCheck()
+                //enteredDataCheck()
+                startActivity(Intent(this, BottomNavBoard::class.java))
             }
         }
-
     }
 
     private fun enteredDataCheck() {
@@ -133,7 +134,6 @@ class SignUpActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
                     Toast.makeText(applicationContext, "OnFailure Called! ", Toast.LENGTH_LONG)
                         .show()
-
                     Log.d("AuthError", t.message.toString())
                 }
 

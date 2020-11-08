@@ -11,8 +11,8 @@ object FinancialData {
         IncomeModel(IncomeCategories.DIGITAL_ASSET_SALES,"Digital asset sales", 2000.0, Date(2020, 10, 2).toString())
     )
     var spendingData: ArrayList<SpendingModel> = arrayListOf(
-        SpendingModel(SpendingCategories.ENTERTAINMENT,"Movies", 250.0, Date(2020, 10, 26).toString()),
-        SpendingModel(SpendingCategories.FAMILY_AND_PERSONAL,"Transportation", 300.0, Date(2020, 10, 26).toString())
+        SpendingModel(SpendingCategories.ENTERTAINMENT,"Movies", 250.0, Date(2020, 10, 26)),
+        SpendingModel(SpendingCategories.FAMILY_AND_PERSONAL,"Transportation", 300.0, Date(2020, 10, 26))
     )
 
     var incomeCategoryData: ArrayList<IncomeDataModel> = arrayListOf(

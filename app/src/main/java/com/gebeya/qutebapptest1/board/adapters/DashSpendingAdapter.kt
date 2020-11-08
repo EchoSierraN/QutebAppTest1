@@ -38,7 +38,7 @@ class DashSpendingAdapter(private var arrayList: ArrayList<SpendingModel>, conte
 
             itemView.tv_item_amount.text = model.spendingAmount.toString()
             itemView.tv_item_source.text = model.spendingSource
-            itemView.tv_item_date.text = model.spendingDate
+            itemView.tv_item_date.text = model.spendingDate.toString()
 
             itemView.iv_transaction_menu.setOnClickListener {
                 //show popup menu

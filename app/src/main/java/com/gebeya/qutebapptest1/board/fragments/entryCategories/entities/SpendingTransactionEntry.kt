@@ -72,7 +72,7 @@ class SpendingTransactionEntry : AppCompatActivity() {
                     category,
                     et_spending_reason.text.toString(),
                     et_spending_amount.text.toString().toDouble(),
-                    Date().toString()
+                    Date()
                 )
             DashSpendingAdapter.editPosition = -1
         } else {
@@ -81,7 +81,7 @@ class SpendingTransactionEntry : AppCompatActivity() {
                     category,
                     et_spending_reason.text.toString(),
                     et_spending_amount.text.toString().toDouble(),
-                    Date().toString()
+                    Date()
                 )
             )
         }

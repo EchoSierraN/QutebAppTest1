@@ -21,6 +21,9 @@ class SessionManager(context: Context) {
         const val USER_TOKEN_EXPIRATION= "user_token_expiration"
         const val REMEMBER_USER = "remember_me"
 
+        /*FOR SAVING APP RELATED DATA*/
+        const val SPENDING_DATA= "spending_data"
+
         /*Maybe put these definitions somewhere else? Somewhere more common
         * to all activities?*/
         lateinit var sessionManager: SessionManager
