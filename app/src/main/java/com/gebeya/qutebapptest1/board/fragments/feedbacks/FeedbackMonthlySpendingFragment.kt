@@ -2,6 +2,7 @@ package com.gebeya.qutebapptest1.board.fragments.feedbacks
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.data.FeedbackData
+import com.gebeya.qutebapptest1.data.FinancialData
 import kotlinx.android.synthetic.main.fragment_feedback_monthly_spending_fragment.*
 import lecho.lib.hellocharts.model.*
 
@@ -177,12 +179,24 @@ class FeedbackMonthlySpendingFragment : Fragment() {
         val line: Line = Line(yAxisValues)
             .setColor(Color.parseColor("#9C27B0"))
 
-        for (i in 0 until axisData.size) {
+//        for (i in 0 until axisData.size) {
+//            axisValues.add(i, AxisValue(i.toFloat()).setLabel(axisData[i]))
+//        }
+
+        for(i in 0 until axisData.size){
             axisValues.add(i, AxisValue(i.toFloat()).setLabel(axisData[i]))
         }
 
-        for (i in 0 until yAxisData.size) {
-            yAxisValues.add(PointValue(i.toFloat(), yAxisData[i].toFloat()))
+//        for (i in 0 until yAxisData.size) {
+//            yAxisValues.add(PointValue(i.toFloat(), yAxisData[i].toFloat()))
+//        }
+
+        try{
+            for(i in 0 until FinancialData.spendingData.size){
+                yAxisValues.add(PointValue(i.toFloat(), FinancialData.spendingData[i].spendingAmount.toFloat()))
+            }
+        }catch (e: Exception){
+            Log.d("GraphException", e.toString())
         }
 
         val lines: MutableList<Line> = arrayListOf()
@@ -192,22 +206,22 @@ class FeedbackMonthlySpendingFragment : Fragment() {
         data.setLines(lines)
 
         val axis = Axis()
-        axis.setValues(axisValues)
+        axis.values = axisValues
         axis.textSize = 16
         axis.textColor = Color.parseColor("#03A9F4")
         data.axisXBottom = axis
 
         val yAxis = Axis()
-        yAxis.name = "Sales in millions"
+        yAxis.name = "Transaction"
         yAxis.textColor = Color.parseColor("#03A9F4")
         yAxis.textSize = 16
         data.axisYLeft = yAxis
 
-        lineChartView.setLineChartData(data)
-        val viewport = Viewport(lineChartView.getMaximumViewport())
+        lineChartView.lineChartData = data
+        val viewport = Viewport(lineChartView.maximumViewport)
         viewport.top = 110f
-        lineChartView.setMaximumViewport(viewport)
-        lineChartView.setCurrentViewport(viewport)
+        lineChartView.maximumViewport = viewport
+        lineChartView.currentViewport = viewport
     }
 
 }

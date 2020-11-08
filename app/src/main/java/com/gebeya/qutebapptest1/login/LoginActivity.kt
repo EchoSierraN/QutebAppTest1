@@ -9,6 +9,7 @@ import android.widget.Toast
 import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.authentication.ApiClient
 import com.gebeya.qutebapptest1.authentication.SessionManager
+import com.gebeya.qutebapptest1.board.BottomNavBoard
 import com.gebeya.qutebapptest1.board.NoticeBoardActivity
 import com.gebeya.qutebapptest1.model.LoginRequest
 import com.gebeya.qutebapptest1.model.LoginResponse
@@ -118,6 +119,29 @@ class LoginActivity : AppCompatActivity() {
         apiClient= ApiClient()
         sessionManager= SessionManager(this)
 
+//        apiClient.getApiService(this).test().enqueue(object: Callback<Any>{
+//            /**
+//             * Invoked when a network exception occurred talking to the server or when an unexpected
+//             * exception occurred creating the request or processing the response.
+//             */
+//            override fun onFailure(call: Call<Any>, t: Throwable) {
+//                Toast.makeText(applicationContext, "OnFailure called", Toast.LENGTH_SHORT).show()
+//            }
+//
+//            /**
+//             * Invoked for a received HTTP response.
+//             *
+//             *
+//             * Note: An HTTP response may still indicate an application-level failure such as a 404 or 500.
+//             * Call [Response.isSuccessful] to determine if the response indicates success.
+//             */
+//            override fun onResponse(call: Call<Any>, response: Response<Any>) {
+//                Toast.makeText(applicationContext, "SUCCESS called", Toast.LENGTH_SHORT).show()
+//            }
+//
+//
+//        })
+
         apiClient.getApiService(this).login(LoginRequest(email, password))
             .enqueue(object : Callback<LoginResponse> {
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
@@ -143,7 +167,7 @@ class LoginActivity : AppCompatActivity() {
 
                             sessionManager.saveAuthToken(loginResponse!!.token)
                             //Move to the next activity
-                            startActivity(Intent(this@LoginActivity, NoticeBoardActivity::class.java))
+                            startActivity(Intent(this@LoginActivity, BottomNavBoard::class.java))
                             finish()
                         }
 

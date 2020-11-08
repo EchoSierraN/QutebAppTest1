@@ -14,6 +14,7 @@ import com.gebeya.qutebapptest1.board.fragments.DashboardIncomeFragment
 import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
 import com.gebeya.qutebapptest1.model.SignupRequest
 import com.gebeya.qutebapptest1.model.SignupResponse
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -54,8 +55,8 @@ class SignUpActivity : AppCompatActivity() {
 
         btn_signup_signup.setOnClickListener {
             if (cb_signup_i_agree_to_terms.isChecked) {
-                //enteredDataCheck()
-                startActivity(Intent(this, BottomNavBoard::class.java))
+                enteredDataCheck()
+                //startActivity(Intent(this, BottomNavBoard::class.java))
             }
         }
     }
@@ -134,6 +135,7 @@ class SignUpActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
                     Toast.makeText(applicationContext, "OnFailure Called! ", Toast.LENGTH_LONG)
                         .show()
+                    Log.d("AuthError", "OnFailure")
                     Log.d("AuthError", t.message.toString())
                 }
 
@@ -141,6 +143,7 @@ class SignUpActivity : AppCompatActivity() {
                     call: Call<SignupResponse>,
                     response: Response<SignupResponse>
                 ) {
+                    Toast.makeText(applicationContext, "SUCCESS!", Toast.LENGTH_LONG).show()
                     val signupResponse = response.body()
 
                     when (response.code()) {
@@ -171,12 +174,13 @@ class SignUpActivity : AppCompatActivity() {
                             fragIncome.arguments= bundle
 
                             //Move to the next activity
-                            var intentNoticeBoardActivity= Intent(this@SignUpActivity, NoticeBoardActivity::class.java)
+                            var intentNoticeBoardActivity= Intent(this@SignUpActivity, BottomNavBoard::class.java)
                             startActivity(intentNoticeBoardActivity)
                             finish()
                         }
 
                         in 400..499 -> {
+                            Log.d("AuthError", "STATUS CODE: ${response.code()}")
                             Toast.makeText(
                                 applicationContext,
                                 "Client error - Invalid data from client",
@@ -185,6 +189,7 @@ class SignUpActivity : AppCompatActivity() {
                         }
 
                         in 500..599 -> {
+                            Log.d("AuthError", "STATUS CODE: ${response.code()}")
                             Toast.makeText(
                                 applicationContext,
                                 "Server error",
@@ -194,7 +199,9 @@ class SignUpActivity : AppCompatActivity() {
                         }
 
                         else -> {
-                            Log.d(this.javaClass.simpleName, "OnResponse unhandled status code")
+                            Log.d("AuthError", "Response, OnFailure, else clause")
+                            Log.d("AuthError", "STATUS CODE: ${response.code()}")
+                            Log.d("AuthError", "OnResponse unhandled status code")
                         }
                     }
                 }

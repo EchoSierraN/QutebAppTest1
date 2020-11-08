@@ -41,7 +41,7 @@ data class LoginResponse(
     var email: String,
     @SerializedName("expiration")
     var expiration: String,
-    @SerializedName("key")
+    @SerializedName("token")
     var token: String
 )
 //endregion
@@ -58,25 +58,56 @@ data class SignupRequest(
 
 //check the Date data type with back end developer
 data class SignupResponse(
-    @SerializedName("fullName")
-    var fullName: String,
-    @SerializedName("expiration")
-    var expiration: String,
-    @SerializedName("email")
-    var email: String,
     @SerializedName("token")
     var token: String,
+    @SerializedName("expiration")
+    var expiration: String,
     @SerializedName("id")
-    var id: Int
+    var id: Int,
+    @SerializedName("fullName")
+    var fullName: String,
+    @SerializedName("email")
+    var email: String
+)
+//endregion
+
+//region PASSWORD RESET
+data class PasswordResetCodeRequest(
+    @SerializedName("email")
+    var email: String
+)
+
+data class PasswordResetCodeResponse(
+    @SerializedName("message")
+    var message: String
+)
+
+/***************************************************/
+
+data class ResetPasswordRequest(
+    @SerializedName("email")
+    var email: String,
+    @SerializedName("code")
+    var code: String,
+    @SerializedName("newPassword")
+    var newPassword: String
+)
+
+data class ResetPasswordResponse(
+    @SerializedName("message")
+    var message: String
 )
 //endregion
 
 //region ====MISCELLANEOUS====
 object Constants {
-    const val BASE_URL = "http://qutebapp-api.apps.et6om.gebeya.co/"
+    const val BASE_URL = "https://qutebapp-api.apps.et6om.gebeya.co"
     const val LOGIN_URL = "api/auth/signin-Email"
     const val SIGNUP_URL = "api/auth/signup-Email"
     //const val POSTS_URL = "posts"
+
+    const val PASSWORD_RESET_REQUEST_CODE_URL= "api/auth/password/sendpasswordresetcode"
+    const val PASSWORD_RESET_REQUEST_URL= "api/auth/password/resetforgottenpassword"
 }
 
 object Prefs{

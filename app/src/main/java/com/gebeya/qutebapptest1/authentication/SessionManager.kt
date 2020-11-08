@@ -9,6 +9,7 @@ import java.util.*
  * Session manager to save and fetch data from SharedPreferences
  */
 class SessionManager(context: Context) {
+
     private var prefs: SharedPreferences =
         context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
     private val editor: SharedPreferences.Editor = prefs.edit()
@@ -34,11 +35,13 @@ class SessionManager(context: Context) {
      * Function to save auth token
      */
     fun saveAuthToken(token: String) {
+        val editor = prefs.edit()
         editor.putString(USER_TOKEN, token)
         editor.apply()
     }
 
     fun deleteAuthToken(){
+        val editor = prefs.edit()
         editor.remove(USER_TOKEN)
         editor.apply()
     }

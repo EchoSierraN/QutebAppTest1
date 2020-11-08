@@ -41,8 +41,13 @@ class SpendingTransactionEntry : AppCompatActivity() {
         spendingSource = intent.extras?.getString(DashSpendingAdapter.EDIT_SPENDING_SOURCE)
 
         //set it to the editTexts
-        et_spending_amount.setText(spendingAmount.toString())
-        et_spending_reason.setText(spendingSource)
+        if (spendingAmount != null) {
+            et_spending_amount.setText(spendingAmount.toString())
+        }
+
+        if(spendingSource!= null) {
+            et_spending_reason.setText(spendingSource)
+        }
     }
 
     override fun onResume() {
