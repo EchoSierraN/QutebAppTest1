@@ -13,6 +13,7 @@ import com.gebeya.qutebapptest1.board.NoticeBoardActivity
 import com.gebeya.qutebapptest1.model.LoginRequest
 import com.gebeya.qutebapptest1.model.LoginResponse
 import com.gebeya.qutebapptest1.model.User
+import com.gebeya.qutebapptest1.welcome.ForgotPasswordActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -65,6 +66,10 @@ class LoginActivity : AppCompatActivity() {
 
         tv_login_sign_up.setOnClickListener {
             startActivity(Intent(this, SignUpActivity::class.java))
+        }
+
+        tv_login_forgot_password.setOnClickListener {
+            startActivity(Intent(this, ForgotPasswordActivity::class.java))
         }
 
         btn_login_sign_in.setOnClickListener {

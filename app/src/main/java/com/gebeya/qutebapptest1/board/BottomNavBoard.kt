@@ -7,13 +7,15 @@ import com.gebeya.qutebapptest1.R
 import com.gebeya.qutebapptest1.board.bottomNavBoard.DashboardFragment
 import com.gebeya.qutebapptest1.board.bottomNavBoard.FeedbackFragment
 import com.gebeya.qutebapptest1.board.bottomNavBoard.SpendingFragment
+import com.gebeya.qutebapptest1.board.fragments.feedbacks.FeedbackMonthlySpendingFragment
 import kotlinx.android.synthetic.main.activity_bottom_nav_board.*
 
 class BottomNavBoard : AppCompatActivity() {
 
     private val dashboardFragment= DashboardFragment()
-    private val spendingFragment= SpendingFragment()
-    private val feedbackFragment= FeedbackFragment()
+    //private val spendingFragment= SpendingFragment()
+    //private val feedbackFragment= FeedbackFragment()
+    private val feedbackMonthlySpendingFragment= FeedbackMonthlySpendingFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +28,9 @@ class BottomNavBoard : AppCompatActivity() {
                 R.id.menu_Dashboard -> {
                     replaceFragment(dashboardFragment)
                 }
-                R.id.menu_Spending -> replaceFragment(spendingFragment)
-                R.id.menu_Feedback -> replaceFragment(feedbackFragment)
+                R.id.menu_Feedback -> replaceFragment(feedbackMonthlySpendingFragment)
+                //R.id.menu_Spending -> replaceFragment(spendingFragment)
+                //R.id.menu_Feedback -> replaceFragment(feedbackFragment)
             }
             true
         }

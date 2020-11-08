@@ -18,6 +18,12 @@
     <string name="fyp_enter_your_email">Enter your email below to retrieve your account.</string>
     <string name="fyp_send_reset_link">Send password reset link</string>
 
+    <!--    ENTER VERIFICATION-->
+    <string name="enter_verification_enter_verification">Enter Verification</string>
+    <string name="enter_verification_verification_code">Verification Code</string>
+    <string name="enter_verification_new_password">New Password</string>
+    <string name="enter_verification_reset_password">Reset Password</string>
+
     <!--    LOGIN-->
 
     <string name="login_email">EMAIL ADDRESS</string>

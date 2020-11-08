@@ -53,7 +53,7 @@ class DashboardFragment : Fragment() {
         adapter = ViewPagerAdapter(this.childFragmentManager!!)
         adapter.addFragment(DashboardSpendingFragment(), "")
         adapter.addFragment(DashboardIncomeFragment(), "")
-        adapter.addFragment(FeedbackMonthlySpendingFragment(), "")
+        //adapter.addFragment(FeedbackMonthlySpendingFragment(), "")
 
         vp_dashboard.adapter = adapter
         vp_dashboard.setCurrentItem(0, true)

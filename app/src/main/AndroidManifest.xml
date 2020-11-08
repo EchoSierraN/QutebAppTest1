@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".welcome.SplashActivity" />
+        <activity android:name=".welcome.EnterVerification"></activity>
+        <activity android:name=".board.BottomNavBoard" />
         <activity android:name=".welcome.ForgotPasswordActivity" />
         <activity android:name=".board.fragments.entryCategories.entities.IncomeTransactionEntity" />
         <activity android:name=".board.fragments.entryCategories.entities.SpendingTransactionEntry" />
@@ -27,7 +27,7 @@
         <activity android:name=".welcome.Welcome2Activity" />
         <activity android:name=".welcome.Welcome1Activity" />
         <activity android:name=".board.fragments.entryCategories.IncomeCategoryActivity" />
-        <activity android:name=".board.BottomNavBoard">
+        <activity android:name=".welcome.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

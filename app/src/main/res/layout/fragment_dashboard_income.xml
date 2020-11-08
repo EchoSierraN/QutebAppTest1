@@ -7,6 +7,17 @@
     tools:context=".board.fragments.DashboardIncomeFragment">
 
     <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_arrow_back_ios_24"
+        app:layout_constraintEnd_toStartOf="@id/textView"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView"
+        app:tint="@color/black" />
+
+    <ImageView
         android:layout_width="695dp"
         android:layout_height="695dp"
         android:background="@drawable/ic_background_activity"
@@ -48,29 +59,13 @@
         android:id="@+id/btn_income_add"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="12dp"
         android:background="@drawable/ic_baseline_add_24"
         android:scaleX=".5"
         android:scaleY=".5"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/button"
-        android:enabled="false"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/ic_download"
-        android:scaleX=".4"
-        android:scaleY=".4"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/iv_transaction_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.367"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.476" />
+        app:layout_constraintTop_toBottomOf="@+id/include"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
