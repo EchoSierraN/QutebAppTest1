@@ -86,7 +86,7 @@ class IncomeTransactionEntity : AppCompatActivity() {
                     category,
                     et_income_reason.text.toString(),
                     et_income_amount.text.toString().toDouble(),
-                    Date().toString()
+                    Date()
                 )
             DashIncomeAdapter.editPosition = -1
         } else {
@@ -95,7 +95,7 @@ class IncomeTransactionEntity : AppCompatActivity() {
                     category,
                     et_income_reason.text.toString(),
                     et_income_amount.text.toString().toDouble(),
-                    Date().toString()
+                    Date()
                 )
             )
         }

@@ -1,7 +1,6 @@
 package com.gebeya.qutebapptest1.model
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 
 //region ====CONTENT====
@@ -99,12 +98,45 @@ data class ResetPasswordResponse(
 )
 //endregion
 
+//region DASHBOARD SPENDING ACTIVITY
+class AllSpendingsRequest()
+
+data class incomeResponse(
+    @SerializedName("id")
+    var id: Int,
+    @SerializedName("incomeCategoryName")
+    var incomeCategoryName: String,
+    @SerializedName("incomeCreationTime")
+    var incomeCreationTime: String,
+    @SerializedName("incomeAmount")
+    var incomeAmount: Int
+)
+
+data class SpendingResponse(
+    @SerializedName("id")
+    var id: Int,
+    @SerializedName("spendingCategoryName")
+    var spendingCategoryName: String,
+    @SerializedName("spendingCreationTime")
+    var spendingCreationTime: String,
+    @SerializedName("spendingAmount")
+    var spendingAmount: Int
+)
+
+data class AllSpendingsResponse(
+    var allSpendings: List<SpendingResponse>
+)
+//endregion
+
 //region ====MISCELLANEOUS====
 object Constants {
     const val BASE_URL = "https://qutebapp-api.apps.et6om.gebeya.co"
     const val LOGIN_URL = "api/auth/signin-Email"
     const val SIGNUP_URL = "api/auth/signup-Email"
     //const val POSTS_URL = "posts"
+
+    //dashboard spending
+    const val GET_ALL_SPENDINGS_URL= "api/income/getallincome"
 
     const val PASSWORD_RESET_REQUEST_CODE_URL= "api/auth/password/sendpasswordresetcode"
     const val PASSWORD_RESET_REQUEST_URL= "api/auth/password/resetforgottenpassword"

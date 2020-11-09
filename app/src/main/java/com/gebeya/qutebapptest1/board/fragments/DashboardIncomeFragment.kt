@@ -17,6 +17,9 @@ import com.gebeya.qutebapptest1.data.FinancialData
 import kotlinx.android.synthetic.main.fragment_dashboard_income.*
 import kotlinx.android.synthetic.main.fragment_dashboard_spending.*
 import kotlinx.android.synthetic.main.layout_dashboard_summary.*
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.util.*
 
 class DashboardIncomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +33,15 @@ class DashboardIncomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_dashboard_income, container, false)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        var totalIncome: Double= 0.0
+        FinancialData.incomeData.forEach {
+            totalIncome+= it.incomeAmount
+        }
+        tv_total_transaction.text= totalIncome.toString()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

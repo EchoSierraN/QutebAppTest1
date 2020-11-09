@@ -36,7 +36,7 @@ class DashIncomeAdapter(private var arrayList: ArrayList<IncomeModel>, context: 
             }
             itemView.tv_item_source.text = model.incomeSource
             itemView.tv_item_amount.text = model.incomeAmount.toString()
-            itemView.tv_item_date.text = model.incomeDate
+            itemView.tv_item_date.text = model.incomeDate.toString()
 
             itemView.iv_transaction_menu.setOnClickListener {
                 //show popup menu

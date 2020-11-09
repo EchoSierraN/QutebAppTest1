@@ -42,7 +42,7 @@
                 app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/tv_total_transaction"
                 android:layout_width="88dp"
                 android:layout_height="29dp"
                 android:layout_marginStart="192dp"

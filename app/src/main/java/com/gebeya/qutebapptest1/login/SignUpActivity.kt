@@ -165,6 +165,9 @@ class SignUpActivity : AppCompatActivity() {
                                 signupResponse.token
                             )
 
+                            //save the token in the prefs
+                            LoginActivity.sessionManager.saveAuthToken(signupResponse!!.token)
+
                             //send the data you need to the next activity
                             val bundle= Bundle()
                             bundle.putString(DASHBOARD_NAME, fullName)

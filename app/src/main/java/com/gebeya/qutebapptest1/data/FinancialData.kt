@@ -7,12 +7,14 @@ import kotlin.collections.ArrayList
 
 object FinancialData {
     var incomeData: ArrayList<IncomeModel> = arrayListOf(
-        IncomeModel(IncomeCategories.DAY_JOB,"Web design", 15000.0, Date(2020, 10, 2).toString()),
-        IncomeModel(IncomeCategories.DIGITAL_ASSET_SALES,"Digital asset sales", 2000.0, Date(2020, 10, 2).toString())
+        IncomeModel(IncomeCategories.DAY_JOB,"Web design", 15000.0, Date(2020, 10, 2)),
+        IncomeModel(IncomeCategories.DIGITAL_ASSET_SALES,"Digital asset sales", 2000.0, Date(2020, 10, 2))
     )
     var spendingData: ArrayList<SpendingModel> = arrayListOf(
         SpendingModel(SpendingCategories.ENTERTAINMENT,"Movies", 250.0, Date(2020, 10, 26)),
-        SpendingModel(SpendingCategories.FAMILY_AND_PERSONAL,"Transportation", 300.0, Date(2020, 10, 26))
+        SpendingModel(SpendingCategories.ENTERTAINMENT,"Movies", 2500.0, Date(2020, 10, 26)),
+        SpendingModel(SpendingCategories.ENTERTAINMENT,"Movies", 25000.0, Date(2020, 10, 26)),
+        SpendingModel(SpendingCategories.FAMILY_AND_PERSONAL,"Transportation", 30000.0, Date(2020, 10, 26))
     )
 
     var incomeCategoryData: ArrayList<IncomeDataModel> = arrayListOf(

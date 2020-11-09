@@ -24,6 +24,10 @@ interface ApiService {
     @PATCH(Constants.PASSWORD_RESET_REQUEST_URL)
     fun resetPasswordRequest(@Body request: ResetPasswordRequest): Call<ResetPasswordResponse>
 
+    @GET(Constants.GET_ALL_SPENDINGS_URL)
+    fun getAllSpendingsRequest(): Call<List<SpendingResponse>>
+//    fun getAllSpendingsRequest(@Body allSpendingsRequest: AllSpendingsRequest): Call<List<SpendingResponse>>
+
 //    @GET("api/user/v1")
 //    fun test(): Call<Any>
 

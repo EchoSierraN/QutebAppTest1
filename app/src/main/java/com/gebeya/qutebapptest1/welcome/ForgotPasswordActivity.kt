@@ -35,7 +35,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
             //check entered data and send
             enteredDataCheck()
             //move to the verification activity
-            startActivity(Intent(this, EnterVerification::class.java))
+            //startActivity(Intent(this, EnterVerification::class.java))
         }
     }
 

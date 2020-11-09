@@ -6,7 +6,7 @@ data class IncomeModel(
     var incomeCategory: IncomeCategories = IncomeCategories.DAY_JOB,
     var incomeSource: String = "DefaultIncome",
     var incomeAmount: Double = 0.0,
-    var incomeDate: String = Date().toString()
+    var incomeDate: Date = Date()
 )
 
 data class SpendingModel(
@@ -21,9 +21,9 @@ enum class SpendingCategories {
 }
 
 enum class IncomeCategories {
-    DAY_JOB,    /*id=0*/
-    DIGITAL_ASSET_SALES,    /*id=1*/
-    CONTENT_CREATION    /*id=2*/
+    DAY_JOB,
+    DIGITAL_ASSET_SALES,
+    CONTENT_CREATION
 }
 
 data class SpendingDataModel(
