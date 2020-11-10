@@ -11,6 +11,10 @@ import com.gebeya.qutebapptest1.board.adapters.DashSpendingAdapter
 import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
 import com.gebeya.qutebapptest1.model.FeedbackTransactionModelModel
 import kotlinx.android.synthetic.main.feedback_spending_item.view.*
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.util.*
+import kotlin.collections.ArrayList
 
 
 class FeedMonthSpendingAdapter(private var arrayList: ArrayList<FeedbackTransactionModelModel>, context: Context): RecyclerView.Adapter<FeedMonthSpendingAdapter.ViewHolder>(){

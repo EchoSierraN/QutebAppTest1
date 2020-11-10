@@ -78,7 +78,7 @@ class FeedbackMonthlySpendingFragment : Fragment() {
         val aaChartModel: AAChartModel = AAChartModel()
             .chartType(AAChartType.Line)
             .title("Summary")
-            .subtitle("Spending and Income over the last month")
+            .subtitle("Recorded Spending and Income")
             .backgroundColor("#80CCEF")
             .dataLabelsEnabled(true)
             .series(

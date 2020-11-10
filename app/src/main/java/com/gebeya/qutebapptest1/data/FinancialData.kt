@@ -7,16 +7,16 @@ import kotlin.collections.ArrayList
 
 object FinancialData {
     var incomeData: ArrayList<IncomeModel> = arrayListOf(
-        IncomeModel(IncomeCategories.DAY_JOB,"Tutoring", 1500.0, Date(2020, 1, 2)),
-        IncomeModel(IncomeCategories.DAY_JOB,"Web design", 10000.0, Date(2020, 1, 2)),
-        IncomeModel(IncomeCategories.DAY_JOB,"Web design", 2500.0, Date(2020, 1, 2)),
-        IncomeModel(IncomeCategories.DIGITAL_ASSET_SALES,"Digital asset sales", 2000.0, Date(2020, 1, 2))
+        IncomeModel(IncomeCategories.DAY_JOB,"Tutoring", 1500.0, Date(2020, 11, 10)),
+        IncomeModel(IncomeCategories.CONTENT_CREATION,"Youtube Tutorials", 10000.0, Date(2020, 11, 10)),
+        IncomeModel(IncomeCategories.DAY_JOB,"Web design", 2500.0, Date(2020, 11, 10)),
+        IncomeModel(IncomeCategories.DIGITAL_ASSET_SALES,"Digital asset sales", 2000.0, Date(2020, 11, 10))
     )
     var spendingData: ArrayList<SpendingModel> = arrayListOf(
-        SpendingModel(SpendingCategories.ENTERTAINMENT,"Movies", 250.0, Date(2020, 1, 26)),
-        SpendingModel(SpendingCategories.ENTERTAINMENT,"Movies", 2500.0, Date(2020, 1, 26)),
-        SpendingModel(SpendingCategories.ENTERTAINMENT,"Movies", 250.0, Date(2020, 1, 26)),
-        SpendingModel(SpendingCategories.FAMILY_AND_PERSONAL,"Transportation", 3000.0, Date(2020, 1, 26))
+        SpendingModel(SpendingCategories.ENTERTAINMENT,"Movies", 250.0, Date(2020, 11, 10)),
+        SpendingModel(SpendingCategories.ENTERTAINMENT,"Playing Golf", 2500.0, Date(2020, 11, 10)),
+        SpendingModel(SpendingCategories.ENTERTAINMENT,"Digital Games", 1250.0, Date(2020, 11, 10)),
+        SpendingModel(SpendingCategories.FAMILY_AND_PERSONAL,"Transportation", 3000.0, Date(2020, 11, 10))
     )
 
     var incomeCategoryData: ArrayList<IncomeDataModel> = arrayListOf(
