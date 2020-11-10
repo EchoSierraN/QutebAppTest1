@@ -4,13 +4,17 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gebeya.qutebapptest1.R
+import com.gebeya.qutebapptest1.board.adapters.DashSpendingAdapter
+import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
 import com.gebeya.qutebapptest1.model.FeedbackTransactionModelModel
 import kotlinx.android.synthetic.main.feedback_spending_item.view.*
 
 
 class FeedMonthSpendingAdapter(private var arrayList: ArrayList<FeedbackTransactionModelModel>, context: Context): RecyclerView.Adapter<FeedMonthSpendingAdapter.ViewHolder>(){
+
     inner class ViewHolder(listItemView: View): RecyclerView.ViewHolder(listItemView){
         fun bindItems(model: FeedbackTransactionModelModel){
 
@@ -22,8 +26,8 @@ class FeedMonthSpendingAdapter(private var arrayList: ArrayList<FeedbackTransact
 
             itemView.iv_change.setImageResource(model.image)
             itemView.tv_month.text= model.month
-            itemView.tv_feedback_summary.text= model.summary.toString()
-            itemView.tv_item_amount.text= model.amount.toString()
+            itemView.tv_feedback_summary.text= model.summary
+            itemView.tv_item_amount.text= DashboardSpendingFragment.formatMoney(model.amount)
         }
     }
 

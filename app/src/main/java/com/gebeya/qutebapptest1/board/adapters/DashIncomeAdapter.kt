@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import com.gebeya.qutebapptest1.R
+import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
 import com.gebeya.qutebapptest1.board.fragments.entryCategories.entities.IncomeTransactionEntity
 import com.gebeya.qutebapptest1.board.fragments.entryCategories.entities.SpendingTransactionEntry
 import com.gebeya.qutebapptest1.data.FinancialData
@@ -35,7 +36,7 @@ class DashIncomeAdapter(private var arrayList: ArrayList<IncomeModel>, context: 
                 IncomeCategories.CONTENT_CREATION -> itemView.iv_item.setImageResource(R.drawable.ic_baseline_video_library_24)
             }
             itemView.tv_item_source.text = model.incomeSource
-            itemView.tv_item_amount.text = model.incomeAmount.toString()
+            itemView.tv_item_amount.text = DashboardSpendingFragment.formatMoney(model.incomeAmount)
             itemView.tv_item_date.text = model.incomeDate.toString()
 
             itemView.iv_transaction_menu.setOnClickListener {

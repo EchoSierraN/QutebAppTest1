@@ -41,7 +41,7 @@ class DashboardIncomeFragment : Fragment() {
         FinancialData.incomeData.forEach {
             totalIncome+= it.incomeAmount
         }
-        tv_total_transaction.text= totalIncome.toString()
+        tv_total_transaction.text= DashboardSpendingFragment.formatMoney(totalIncome)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

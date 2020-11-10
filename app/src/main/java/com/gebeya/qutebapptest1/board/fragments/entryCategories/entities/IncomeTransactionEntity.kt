@@ -40,9 +40,10 @@ class IncomeTransactionEntity : AppCompatActivity() {
         incomeSource = intent.extras?.getString(DashIncomeAdapter.EDIT_INCOME_SOURCE)
 
         //set it to the editTexts
-        et_income_amount.setText(incomeAmount.toString())
-        et_income_reason.setText(incomeSource)
-
+        if(incomeAmount!= null && incomeSource!= null) {
+            et_income_amount.setText(incomeAmount.toString())
+            et_income_reason.setText(incomeSource)
+        }
     }
 
     override fun onResume() {

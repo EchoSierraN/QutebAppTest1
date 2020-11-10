@@ -43,10 +43,11 @@
 
             <TextView
                 android:id="@+id/tv_total_transaction"
-                android:layout_width="88dp"
+                android:layout_width="wrap_content"
                 android:layout_height="29dp"
-                android:layout_marginStart="192dp"
+                android:layout_marginStart="170dp"
                 android:layout_marginBottom="16dp"
+                android:textAlignment="textEnd"
                 android:text="6,495Br"
                 android:textColor="@color/white"
                 android:textSize="24dp"

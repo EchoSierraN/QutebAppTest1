@@ -63,7 +63,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun enteredDataCheck() {
 
-        //region This probably only works below API level 30
+        //region This probably only works at API level 30
 //        if(!Patterns.EMAIL_ADDRESS.matcher(et_signup_phone_email.text.toString()).matches()){
 //            et_signup_phone_email.error = "Please enter valid email"
 //            et_signup_phone_email.requestFocus()
@@ -78,15 +78,29 @@ class SignUpActivity : AppCompatActivity() {
 
         //region MINIMUM LENGTH
         val minFullNameLength= 5
-        val minPasswordLength= 5
+        val minPasswordLength= 6
+
+        if(et_signup_your_first_name.text.toString()[0] == ' '){
+            et_signup_your_first_name.error = "You can not begin with SPACE"
+            et_signup_your_first_name.requestFocus()
+            return
+        }
+
+        if(et_signup_phone_email.text.toString()[0] == ' '){
+            et_signup_phone_email.error = "You can not begin with SPACE"
+            et_signup_phone_email.requestFocus()
+            return
+        }
 
         if(et_signup_your_first_name.text.toString().length< 5){
             et_signup_your_first_name.error= "Minimum character length is 5"
+            et_signup_your_first_name.requestFocus()
             return
         }
 
         if(et_signup_password.text.toString().length< 6){
             et_signup_password.error= "Minimum password length is 6"
+            et_signup_password.requestFocus()
             return
         }
         //endregion
@@ -96,7 +110,6 @@ class SignUpActivity : AppCompatActivity() {
             et_signup_phone_email.requestFocus()
             return
         }
-
 
         if (et_signup_phone_email.text.toString().isEmpty()) {
             et_signup_phone_email.error = "Please enter email"
@@ -166,7 +179,7 @@ class SignUpActivity : AppCompatActivity() {
                             )
 
                             //save the token in the prefs
-                            LoginActivity.sessionManager.saveAuthToken(signupResponse!!.token)
+                            LoginActivity.sessionManager.saveAuthToken(signupResponse.token)
 
                             //send the data you need to the next activity
                             val bundle= Bundle()

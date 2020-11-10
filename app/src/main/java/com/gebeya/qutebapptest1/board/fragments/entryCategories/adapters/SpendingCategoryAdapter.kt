@@ -57,14 +57,14 @@ class SpendingCategoryAdapter(
                 1 -> {
                     //id=1
                     Toast.makeText(context, "ENTERTAINMENT CATEGORY", Toast.LENGTH_SHORT)
-                    SpendingCategoryActivity.Companion.currentCategoryId = 0
+                    SpendingCategoryActivity.Companion.currentCategoryId = 1
                 }
 
                 2 -> {
                     //id=2
                     Toast.makeText(context, "FOOD CATEGORY", Toast.LENGTH_SHORT)
                         .show()
-                    SpendingCategoryActivity.Companion.currentCategoryId = 0
+                    SpendingCategoryActivity.Companion.currentCategoryId = 2
                 }
             }
             context.startActivity(intentSpendingEntity)

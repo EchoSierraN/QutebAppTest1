@@ -20,11 +20,28 @@ import kotlinx.android.synthetic.main.layout_dashboard_summary.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.StringBuilder
+import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 class DashboardSpendingFragment : Fragment() {
+
+    companion object{
+        fun setTotalSpendingDisplay(){
+            var totalSpending: Double = 0.0
+            FinancialData.spendingData.forEach {
+                totalSpending += it.spendingAmount
+            }
+        }
+
+        fun formatMoney(amount: Double): String{
+            val moneyInt= amount.toInt()
+            return StringBuilder().append(NumberFormat.getNumberInstance(Locale.US).format(moneyInt).toString()).append(" Birr").toString()
+            //return "ETB ${NumberFormat.getNumberInstance(Locale.US).format(moneyInt)}"
+        }
+    }
 
     lateinit var apiClient: ApiClient
 
@@ -54,7 +71,7 @@ class DashboardSpendingFragment : Fragment() {
         FinancialData.spendingData.forEach {
             totalSpending += it.spendingAmount
         }
-        tv_total_transaction.text= totalSpending.toString()
+        tv_total_transaction.text= formatMoney(totalSpending)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -66,7 +83,7 @@ class DashboardSpendingFragment : Fragment() {
         cash_flow_type.text = getString(R.string.spending_cash_flow_type)
 
         //Pull spending data here.
-        getAllSpendings()
+        //getAllSpendings()
 
         val dashSpendingAdapter = DashSpendingAdapter(FinancialData.spendingData, this.context!!)
         rv_spending_transactions.layoutManager = LinearLayoutManager(this.context)

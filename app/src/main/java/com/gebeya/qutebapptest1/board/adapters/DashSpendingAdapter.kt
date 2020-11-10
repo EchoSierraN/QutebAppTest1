@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.gebeya.qutebapptest1.R
+import com.gebeya.qutebapptest1.board.fragments.DashboardSpendingFragment
 import com.gebeya.qutebapptest1.board.fragments.entryCategories.SpendingCategoryActivity
 import com.gebeya.qutebapptest1.board.fragments.entryCategories.entities.SpendingTransactionEntry
 import com.gebeya.qutebapptest1.data.FinancialData
@@ -17,6 +19,7 @@ import kotlinx.android.synthetic.main.layout_transaction_item.view.*
 
 class DashSpendingAdapter(private var arrayList: ArrayList<SpendingModel>, context: Context) :
     RecyclerView.Adapter<DashSpendingAdapter.ViewHolder>() {
+
     var context= context
         companion object {
             var REQUEST_CODE_EDIT_TRANSACTION: Int = 0
@@ -36,7 +39,7 @@ class DashSpendingAdapter(private var arrayList: ArrayList<SpendingModel>, conte
                 SpendingCategories.ENTERTAINMENT -> itemView.iv_item.setImageResource(R.drawable.ic_baseline_games_24)
             }
 
-            itemView.tv_item_amount.text = model.spendingAmount.toString()
+            itemView.tv_item_amount.text = DashboardSpendingFragment.formatMoney(model.spendingAmount)
             itemView.tv_item_source.text = model.spendingSource
             itemView.tv_item_date.text = model.spendingDate.toString()
 
@@ -93,6 +96,8 @@ class DashSpendingAdapter(private var arrayList: ArrayList<SpendingModel>, conte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(arrayList[position])
+
+        //set total amount of money
     }
 
 }

@@ -14,6 +14,8 @@ object FeedbackData {
     var monthlyIncomeData: ArrayList<FeedbackTransactionModelModel> = arrayListOf()
 
     fun setupMonthlyData() {
+        monthlySpendingData.clear()
+        monthlyIncomeData.clear()
         FinancialData.spendingData.forEach {
             monthlySpendingData.add(
                 FeedbackTransactionModelModel(
